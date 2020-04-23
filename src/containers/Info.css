@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=Alice&display=swap");
+
+.title-font {
+  font-family: "Alice", serif;
+}
+
+.food-main {
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  font-family: "Manrope", sans-serif;
+}
+
+.food-image {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.food-ingredient {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
