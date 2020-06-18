@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import "./Home.css";
-import RecipeSearch from "../components/RecipeSearch";
-import TagList from "../components/TagList";
-import RecipeBody from "../components/RecipeBody";
-import getAPIKey from "../APIKEY";
+import React, { Component } from 'react';
+import './Home.css';
+import RecipeSearch from '../components/RecipeSearch';
+import TagList from '../components/TagList';
+import RecipeBody from '../components/RecipeBody';
+import getAPIKey from '../APIKEY';
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      searchField: "",
+      searchField: '',
       tagList: [],
       isLoading: false,
       recipes: [],
@@ -17,7 +17,9 @@ class Home extends Component {
   }
 
   handleSearchField = (e) => {
-    this.setState({ searchField: e.target.value });
+    this.setState({
+      searchField: e.target.value,
+    });
   };
 
   handleTagList = () => {
@@ -27,20 +29,30 @@ class Home extends Component {
         {
           tagList: [...tagList, searchField],
         },
-        () => this.handleRecipe()
+        () => this.handleRecipe(),
       );
     }
   };
 
   handleRecipe = () => {
     const { tagList } = this.state;
-    const ingredients = tagList.join(",+");
+    const ingredients = tagList.join(',+');
     const query = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients}&apiKey=${getAPIKey()}&number=20`;
-    this.setState({ isLoading: true });
+    this.setState({
+      isLoading: true,
+    });
     fetch(query)
       .then((res) => res.json())
-      .then((recipes) => this.setState({ recipes }))
-      .then(() => this.setState({ isLoading: false }));
+      .then((recipes) =>
+        this.setState({
+          recipes,
+        }),
+      )
+      .then(() =>
+        this.setState({
+          isLoading: false,
+        }),
+      );
   };
 
   render() {

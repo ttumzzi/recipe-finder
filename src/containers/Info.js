@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import getAPIKey from "../APIKEY";
-import ReactLoading from "react-loading";
-import "./Info.css";
-import Ingredient from "../components/Ingredient";
+import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
+import getAPIKey from '../APIKEY';
+import './Info.css';
+import Ingredient from '../components/Ingredient';
 
 class Info extends Component {
   constructor({ match }) {
     super();
     this.id = match.params.id;
     this.state = {
-      title: "",
-      image: "",
+      title: '',
+      image: '',
       ingredients: [],
       isLoaded: false,
       rating: 0,
@@ -30,14 +30,15 @@ class Info extends Component {
           ingredients: extendedIngredients,
           isLoaded: true,
           summary,
-        })
+        }),
       );
   }
 
   render() {
     const { title, image, ingredients, summary } = this.state;
-    if (!this.state.isLoaded)
-      return <ReactLoading className="center" type={`spokes`} />;
+    if (!this.state.isLoaded) {
+      return <ReactLoading className="center" type="spokes" />;
+    }
     return (
       <div className="food-main mh7-l mh4-m mh2 mb3 ph5-l ph3 pb5 pt3">
         <div className="information tc title-font f2 ma3">{title}</div>
@@ -58,7 +59,9 @@ class Info extends Component {
         <div className="tc ma3 f4 title-font">Recipe Summary</div>
         <div
           className="description pa4 bg-white br4"
-          dangerouslySetInnerHTML={{ __html: summary }}
+          dangerouslySetInnerHTML={{
+            __html: summary,
+          }}
         />
       </div>
     );

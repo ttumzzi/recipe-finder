@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Recipe = ({ id, image, title }) => {
   return (
     <Link
       to={`/recipe/${id}`}
-      style={{ textDecoration: "none", color: "black" }}
+      style={{ textDecoration: 'none', color: 'black' }}
     >
       <div className="w-90 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10 grow">
         <div className="tc">

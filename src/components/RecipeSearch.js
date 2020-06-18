@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const RecipeSearch = ({ changeSearchField, addTag }) => {
   return (
@@ -7,7 +7,7 @@ const RecipeSearch = ({ changeSearchField, addTag }) => {
         className="input-reset b--black-20 pa2 ma1 w-70 br3"
         placeholder="Add ingredients..."
         onChange={changeSearchField}
-      ></input>
+      />
       <button
         onClick={addTag}
         className="b--black-20 pa2 ma1 br3 bg-dark-blue white"
