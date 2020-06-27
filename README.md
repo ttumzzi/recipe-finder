@@ -2,9 +2,9 @@
 
 자신이 갖고 있는 재료를 추가하면 그에 해당하는 **레시피를 찾아주는 사이트**입니다.
 
-<img src="C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20200618202942860.png" alt="image-20200618202942860" style="zoom:50%;" />
+### 👉[visit Recipe Finder🥗🍤🧆🥧](https://ttumzzi.github.io/recipe-finder/)
 
-
+![메인](https://github.com/ttumzzi/recipe-finder/blob/master/asset/recipe_finder_main.JPG?raw=true)
 
 ## Descriptions
 
@@ -12,7 +12,9 @@
 - 원하는 레시피를 클릭한다.
 - 상세보기 페이지에서 자세한 재료와 조리 방법을 확인한다.
 
-* 사용한 레시피 API: [Recipe API](https://spoonacular.com/food-api/docs)
+* 사용한 무료 API
+  * 레시피 API 👉 [Spoonacular Food API](https://spoonacular.com/food-api/docs)
+  * 음식 검색 API 👉 [Edamam API](https://developer.edamam.com/)
 
 
 
