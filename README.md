@@ -26,7 +26,7 @@
 
 ## Commit styles
 
-udacity의 [Gti Commit Message Style Guide](Udacity Git Commit Message Style Guide) 참고했습니다.
+udacity의 [Gti Commit Message Style Guide](https://udacity.github.io/git-styleguide/) 참고했습니다.
 
 
 
