@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactLoading from 'react-loading';
+import { useParams } from 'react-router-dom';
 import getAPIKey from '../const';
 import './Info.css';
 import Ingredient from '../components/Ingredient';
 
-const Info = ({ match }) => {
+const Info = () => {
+  const { id } = useParams();
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [ingredients, setIngredients] = useState([]);
@@ -12,19 +14,17 @@ const Info = ({ match }) => {
   const [summary, setSummary] = useState('');
 
   useEffect(() => {
-    const query = `https://api.spoonacular.com/recipes/${
-      match.params.id
-    }/information?&apiKey=${getAPIKey()}`;
-    fetch(query)
-      .then((res) => res.json())
-      .then(({ _title, _image, _ingredients, _summary }) => {
-        setTitle(_title);
-        setImage(_image);
-        setIngredients(_ingredients);
-        setLoaded(true);
-        setSummary(_summary);
-      });
-  });
+    const query = `https://api.spoonacular.com/recipes/${id}/information?&apiKey=${getAPIKey()}`;
+    (async () => {
+      const res = await fetch(query);
+      const data = await res.json();
+      setTitle(data.title);
+      setImage(data.image);
+      setIngredients(data.extendedIngredients);
+      setSummary(data.instructions);
+      setLoaded(true);
+    })();
+  }, [title]);
 
   if (!isLoaded) {
     return <ReactLoading className="center" type="spokes" />;
