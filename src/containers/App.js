@@ -4,9 +4,6 @@ import Home from './Home';
 import Info from './Info';
 
 const App = () => {
-  const a = () => {
-    return '2';
-  };
   return (
     <BrowserRouter>
       <header className="Home-header">
